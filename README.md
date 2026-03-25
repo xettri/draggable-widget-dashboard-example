@@ -1,36 +1,40 @@
-# Rsbuild project
+# Draggable Widget Dashboard POC
 
-## Setup
+This project is a high-performance Proof of Concept (POC) demonstrating a complex, professional-grade drag-and-drop dashboard interface. It mimics the behavior of advanced trading and analytics platforms, allowing users to move, dock, tab, and resize individual widget windows dynamically.
 
-Install the dependencies:
+## Features
+
+- **Docking Layout**: Powered by `flexlayout-react`, you can drag windows to the edges of other panes to automatically split the layout horizontally or vertically.
+- **Tabbing**: Drag a widget header onto another widget's header to stack them into accessible tabs.
+- **Fluid Resizing**: Adjust the width and height of any widget panel in real-time.
+- **Rich Widgets**: Features realistic placeholder widgets, including a beautiful, responsive area chart built with `recharts` simulating stock market data.
+- **Performance**: Carefully optimized by memoizing rendering functions and disabling strict-mode double-renders to ensure butter-smooth drag/drop interactions.
+
+## Tech Stack
+
+- **Framework**: React 19
+- **Bundler**: Rsbuild (for ultra-fast compilation)
+- **Styling**: Tailwind CSS v4
+- **Layout Engine**: `flexlayout-react`
+- **Charts**: `recharts`
+- **Icons**: `lucide-react`
+
+## Quick Start
+To run the project locally, install the dependencies using [pnpm](https://pnpm.io/):
 
 ```bash
 pnpm install
 ```
 
-## Get started
-
-Start the dev server, and the app will be available at [http://localhost:3000](http://localhost:3000).
+Start the development server:
 
 ```bash
 pnpm run dev
 ```
 
-Build the app for production:
+Open [http://localhost:3000](http://localhost:3000) (or the port specified in your terminal) to view the application in the browser.
 
-```bash
-pnpm run build
-```
+## Deployment
 
-Preview the production build locally:
-
-```bash
-pnpm run preview
-```
-
-## Learn more
-
-To learn more about Rsbuild, check out the following resources:
-
-- [Rsbuild documentation](https://rsbuild.rs) - explore Rsbuild features and APIs.
-- [Rsbuild GitHub repository](https://github.com/web-infra-dev/rsbuild) - your feedback and contributions are welcome!
+This repository includes a pre-configured GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys the application to **GitHub Pages** upon any push to the `main` branch. 
+The Rsbuild configuration (`rsbuild.config.ts`) has been tailored to properly output `assetPrefix: './'` to support routing if served on a GitHub subpath.
