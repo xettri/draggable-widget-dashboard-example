@@ -8,7 +8,9 @@
     "dev": "rsbuild dev --open",
     "format": "prettier --write .",
     "lint": "eslint .",
-    "preview": "rsbuild preview"
+    "preview": "rsbuild preview",
+    "build:gh-pages": "GH_PAGES=true rsbuild build",
+    "deploy": "pnpm build:gh-pages && gh-pages -d dist"
   },
   "dependencies": {
     "flexlayout-react": "^0.8.19",
