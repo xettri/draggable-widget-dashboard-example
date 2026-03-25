@@ -53,7 +53,8 @@ export const NativeDashboard = () => {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';
     if (id !== draggedWidgetId) {
-      setHoveredWidgetId(id);
+      // PERFORMANCE FIX: Only trigger a re-render if the target actually changed
+      setHoveredWidgetId((prev) => (prev === id ? prev : id));
     }
   };
 

@@ -176,7 +176,12 @@ export const ExactNativeDashboard = () => {
     e.dataTransfer.dropEffect = 'move';
     
     const zone = calculateDropZone(e, e.currentTarget);
-    setHoverTarget({ tabSetId, zone });
+    
+    setHoverTarget((prev) => {
+      // PERFORMANCE FIX: Only trigger a re-render if the target or zone actually changed
+      if (prev?.tabSetId === tabSetId && prev?.zone === zone) return prev;
+      return { tabSetId, zone };
+    });
   };
 
   const handleDragLeave = (e: React.DragEvent<HTMLDivElement>) => {
