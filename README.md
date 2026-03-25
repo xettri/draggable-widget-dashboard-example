@@ -20,6 +20,7 @@ This project is a high-performance Proof of Concept (POC) demonstrating a comple
 - **Icons**: `lucide-react`
 
 ## Quick Start
+
 To run the project locally, install the dependencies using [pnpm](https://pnpm.io/):
 
 ```bash
@@ -36,5 +37,5 @@ Open [http://localhost:3000](http://localhost:3000) (or the port specified in yo
 
 ## Deployment
 
-This repository includes a pre-configured GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys the application to **GitHub Pages** upon any push to the `main` branch. 
+This repository includes a pre-configured GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically builds and deploys the application to **GitHub Pages** upon any push to the `main` branch.
 The Rsbuild configuration (`rsbuild.config.ts`) has been tailored to properly output `assetPrefix: './'` to support routing if served on a GitHub subpath.
