@@ -5,6 +5,6 @@ import { pluginReact } from '@rsbuild/plugin-react';
 export default defineConfig({
   plugins: [pluginReact()],
   output: {
-    assetPrefix: '/draggable-widget-dashboard-example/',
+    assetPrefix: process.env.GH_PAGES ? '/draggable-widget-dashboard-example/' : './',
   }
 });
