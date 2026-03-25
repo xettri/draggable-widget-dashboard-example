@@ -5,7 +5,7 @@ import { ExactNativeDashboard } from './components/ExactNativeDashboard';
 import './App.css';
 
 const App = () => {
-  const [view, setView] = useState<'flexlayout' | 'native' | 'exact-native'>('exact-native');
+  const [view, setView] = useState<'flexlayout' | 'native' | 'exact-native'>('flexlayout');
 
   return (
     <div className="h-screen w-screen flex flex-col overflow-hidden">
@@ -17,36 +17,33 @@ const App = () => {
           </div>
           <span>WidgetPOC</span>
         </div>
-        
+
         {/* Toggle Switch */}
-        <div className="flex bg-slate-800 p-1 rounded-md border border-slate-700">
+        <div className="flex bg-slate-800 p-1 rounded-md border border-slate-700 gap-1">
           <button
             onClick={() => setView('flexlayout')}
-            className={`px-4 py-1.5 text-sm font-medium rounded-sm transition-colors ${
-              view === 'flexlayout' 
-                ? 'bg-blue-600 text-white shadow-sm' 
-                : 'text-slate-300 hover:text-white hover:bg-slate-700'
-            }`}
+            className={`px-4 py-1.5 text-sm font-medium rounded-sm transition-colors ${view === 'flexlayout'
+              ? 'bg-blue-600 text-white shadow-sm'
+              : 'text-slate-300 hover:text-white hover:bg-slate-700'
+              }`}
           >
             FlexLayout React
           </button>
           <button
             onClick={() => setView('native')}
-            className={`px-4 py-1.5 text-sm font-medium rounded-sm transition-colors ${
-              view === 'native' 
-                ? 'bg-blue-600 text-white shadow-sm' 
-                : 'text-slate-300 hover:text-white hover:bg-slate-700'
-            }`}
+            className={`px-4 py-1.5 text-sm font-medium rounded-sm transition-colors ${view === 'native'
+              ? 'bg-blue-600 text-white shadow-sm'
+              : 'text-slate-300 hover:text-white hover:bg-slate-700'
+              }`}
           >
             Native Grid
           </button>
           <button
             onClick={() => setView('exact-native')}
-            className={`px-4 py-1.5 text-sm font-medium rounded-sm transition-colors ${
-              view === 'exact-native' 
-                ? 'bg-blue-600 text-white shadow-sm' 
-                : 'text-slate-300 hover:text-white hover:bg-slate-700'
-            }`}
+            className={`px-4 py-1.5 text-sm font-medium rounded-sm transition-colors ${view === 'exact-native'
+              ? 'bg-blue-600 text-white shadow-sm'
+              : 'text-slate-300 hover:text-white hover:bg-slate-700'
+              }`}
           >
             FlexLayout Simulator (Native)
           </button>
@@ -55,9 +52,9 @@ const App = () => {
 
       {/* Renders the injected component */}
       <div className="flex-1 relative overflow-hidden bg-zinc-100">
-         {view === 'flexlayout' && <Dashboard />}
-         {view === 'native' && <NativeDashboard />}
-         {view === 'exact-native' && <ExactNativeDashboard />}
+        {view === 'flexlayout' && <Dashboard />}
+        {view === 'native' && <NativeDashboard />}
+        {view === 'exact-native' && <ExactNativeDashboard />}
       </div>
     </div>
   );
